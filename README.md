@@ -42,15 +42,5 @@ I’m **Rudra Tripathi**, an **AI/ML Engineering Student** skilled in **Python, 
 ## 🎓 Internship
 **NIELIT — AI/ML using Python (45 Days)**  
 Role: *Student Trainee*  
-Gained hands-on experience in model training, Python-based ML, and data visualization.
-
----
-
-## 🧾 How to Run Locally
-```bash
-# Clone this repository
-git clone https://github.com/Rudra3773/RudraTripathi-Portfolio.git
-
-# Open index.html in your browser
-
+Gained hands-on experience in model training, Python-based ML, and data visualizati
 
