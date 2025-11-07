@@ -1,292 +1,183 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>RUDRA TRIPATHI — AI/ML Engineer</title>
-  <meta name="description" content="Rudra Tripathi — AI/ML Engineering Student. Projects, internships and contact." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rudra Tripathi — AI/ML Engineering Student skilled in Python, Java, DSA & Data Science." />
+  <title>Rudra Tripathi — AI/ML Engineer Portfolio</title>
+
   <style>
-    :root{
-      --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent:#4f46e5; --glass:rgba(255,255,255,0.03);
-      --glass-2: rgba(255,255,255,0.02);
-      --fw-normal: 400; --fw-bold:700; color-scheme: dark;
+    :root {
+      --bg: #0d1117;
+      --card: #161b22;
+      --accent: #4f46e5;
+      --muted: #94a3b8;
+      --text: #e2e8f0;
+      --glow: rgba(79, 70, 229, 0.6);
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;color:#e6eef8;background:linear-gradient(180deg,#071028 0%, #071021 60%);-webkit-font-smoothing:antialiased}
-    .container{max-width:980px;margin:32px auto;padding:28px}
-    header{display:flex;align-items:center;gap:18px}
-    .avatar{width:96px;height:96px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:22px;background:linear-gradient(135deg,#111827,#0b1220);box-shadow:0 6px 18px rgba(5,8,15,0.6)}
-    h1{margin:0;font-size:22px}
-    .title-sub{color:var(--muted);margin-top:6px;font-size:14px}
-    .hero-ctas{margin-left:auto;display:flex;gap:10px}
-    .btn{background:linear-gradient(90deg,var(--accent),#06b6d4);border:none;color:white;padding:10px 14px;border-radius:10px;font-weight:600;cursor:pointer;text-decoration:none}
-    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06)}
-    main{display:grid;grid-template-columns:1fr 340px;gap:22px;margin-top:28px}
-    .card{background:var(--card);padding:18px;border-radius:14px;box-shadow:0 6px 30px rgba(2,6,23,0.6);}
-    .about p{color:var(--muted);line-height:1.5}
-    .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}
-    .skill-chip{background:var(--glass);padding:8px;border-radius:8px;font-size:13px;color:var(--muted)}
-    .section-title{font-weight:700;margin-bottom:10px}
-    .projects-list{display:flex;flex-direction:column;gap:12px}
-    .project{display:flex;gap:12px;align-items:flex-start}
-    .project .meta{flex:1}
-    .project a{color:var(--accent);font-weight:600;text-decoration:none}
-    .right-col .info-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-    footer{margin-top:26px;color:var(--muted);font-size:13px;text-align:center}
-    .skills .group{margin-bottom:6px}
-    .intern-list, .cert-list{display:flex;flex-direction:column;gap:8px}
-    .tag{display:inline-block;background:var(--glass-2);padding:6px 10px;border-radius:999px;font-size:12px;color:var(--muted)}
-    .project-desc{color:var(--muted);font-size:14px}
-    .proj-links{margin-top:8px}
-    .proj-links a{margin-right:8px;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.02);text-decoration:none;color:#dbeafe;font-size:13px}
-    .download-note{font-size:13px;color:var(--muted);margin-top:8px}
-    .theme-toggle{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:9px;color:var(--muted);cursor:pointer}
-    @media (max-width:900px){main{grid-template-columns:1fr} .hero-ctas{margin-left:0;margin-top:12px}}
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(180deg, #0d1117 0%, #1e293b 100%);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 10px;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      background: var(--card);
+      padding: 20px 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+      margin-bottom: 30px;
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+      box-shadow: 0 0 25px var(--glow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: pulseGlow 4s infinite;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(79, 70, 229, 0.9);
+    }
+
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 15px var(--glow); }
+      50% { box-shadow: 0 0 30px var(--glow); }
+      100% { box-shadow: 0 0 15px var(--glow); }
+    }
+
+    header h1 {
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* MAIN CONTENT */
+    main {
+      max-width: 900px;
+      background: var(--card);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    h2 {
+      font-size: 20px;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .section {
+      margin-bottom: 25px;
+    }
+
+    ul {
+      list-style: none;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    a {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #93c5fd;
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
   </style>
-.profile-pic {
-  width: 110px;
-  height: 110px;
-  max-width: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--accent);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-  margin-right: 18px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: pulseGlow 4s infinite;
-}
-
-.profile-pic:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(79, 70, 229, 0.8);
-}
-
-header {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-@keyframes pulseGlow {
-  0% { box-shadow: 0 0 10px rgba(79,70,229,0.6); }
-  50% { box-shadow: 0 0 25px rgba(79,70,229,1); }
-  100% { box-shadow: 0 0 10px rgba(79,70,229,0.6); }
-}
 </head>
 <body>
-  <div class="container">
-    <header>
-      <img src="rudra.jpg" alt="Rudra Tripathi" class="profile-pic" />
 
-      <div>
-        <h1>RUDRA TRIPATHI</h1>
-        <div class="title-sub">AI/ML Engineering Student — Python, Java, DSA & Data Science</div>
-      </div>
+  <!-- Header Section -->
+  <header>
+    <img src="rudra.jpg" alt="Rudra Tripathi" class="profile-pic" />
+    <div>
+      <h1>RUDRA TRIPATHI</h1>
+      <p>AI/ML Engineering Student — Python, Java, DSA & Data Science</p>
+    </div>
+  </header>
 
-      <div class="hero-ctas">
-        <a class="btn" href="#projects">View Projects</a>
-        <a class="btn ghost" id="download-resume" href="resume.pdf" download>Download Resume</a>
-        <button class="theme-toggle" id="toggleTheme">Light</button>
-      </div>
-    </header>
+  <!-- Main Section -->
+  <main>
+    <section class="section">
+      <h2>About Me</h2>
+      <p>
+        I'm Rudra Tripathi, an AI/ML Engineering Student skilled in Python, Java, DSA, and Data Science — 
+        passionate about developing smart solutions for defense & surveillance technologies.
+      </p>
+    </section>
 
-    <main>
-      <div>
-        <section class="card about">
-          <div class="section-title">About</div>
-          <p>AI/ML Engineering Student | Python, Java, DSA & Data Science | Building Smart Solutions in Defense & Surveillance Tech.</p>
+    <section class="section">
+      <h2>Skills</h2>
+      <ul>
+        <li><b>Languages:</b> Python, Java, SQL</li>
+        <li><b>Core Areas:</b> Data Structures, Machine Learning, Deep Learning, NLP</li>
+        <li><b>Libraries & Tools:</b> NumPy, Pandas, Matplotlib, Streamlit, YOLOv8, OpenCV</li>
+        <li><b>Soft Skills:</b> Leadership, Problem Solving, Communication</li>
+      </ul>
+    </section>
 
-          <div style="margin-top:14px">
-            <div class="section-title">Skills</div>
-            <div class="skills">
-              <div>
-                <div class="group"><strong>Programming</strong></div>
-                <div class="skill-chip">Python</div>
-                <div class="skill-chip">Java</div>
-                <div class="skill-chip">SQL</div>
-                <div class="skill-chip">MS Excel</div>
-              </div>
-              <div>
-                <div class="group"><strong>AI / Core</strong></div>
-                <div class="skill-chip">Data Structures</div>
-                <div class="skill-chip">Machine Learning</div>
-                <div class="skill-chip">Deep Learning</div>
-                <div class="skill-chip">NLP</div>
-              </div>
-            </div>
+    <section class="section">
+      <h2>Projects</h2>
+      <ul>
+        <li>🧠 <b>NEURA - Virtual Assistant:</b> Voice-controlled AI assistant for web automation | <a href="#">GitHub</a></li>
+        <li>🚗 <b>Traffic Management System:</b> Object detection using YOLOv8 + Streamlit dashboard | <a href="#">GitHub</a></li>
+        <li>🚁 <b>Drone Surveillance System:</b> Real-time tracking with YOLOv8 + DeepSORT | <a href="#">GitHub</a></li>
+      </ul>
+    </section>
 
-            <div style="margin-top:12px">
-              <div class="group"><strong>Libraries & Tools</strong></div>
-              <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px">
-                <span class="tag">NumPy</span>
-                <span class="tag">Pandas</span>
-                <span class="tag">Matplotlib</span>
-                <span class="tag">Streamlit</span>
-                <span class="tag">YOLOv8</span>
-                <span class="tag">PyTorch</span>
-                <span class="tag">OpenCV</span>
-                <span class="tag">Scikit-learn</span>
-              </div>
-            </div>
+    <section class="section">
+      <h2>Internship</h2>
+      <p><b>NIELIT — AI/ML using Python (45 Days)</b><br>
+      Gained hands-on experience in model training, Python-based ML, and data visualization.</p>
+    </section>
 
-            <div style="margin-top:14px">
-              <div class="group"><strong>Soft Skills</strong></div>
-              <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
-                <div class="skill-chip">Problem Solving</div>
-                <div class="skill-chip">Communication</div>
-                <div class="skill-chip">Team Management</div>
-                <div class="skill-chip">Analytical Thinking</div>
-                <div class="skill-chip">Leadership</div>
-              </div>
-            </div>
-          </div>
-        </section>
+    <section class="section">
+      <h2>Contact</h2>
+      <p><b>Email:</b> rudratripathi3773@gmail.com</p>
+      <p><b>GitHub:</b> <a href="https://github.com/Rudra3773" target="_blank">Rudra3773</a></p>
+      <p><b>LinkedIn:</b> <a href="https://linkedin.com/in/rudra-tripathi" target="_blank">rudra-tripathi</a></p>
+    </section>
+  </main>
 
-        <section id="projects" class="card" style="margin-top:16px">
-          <div class="section-title">Projects</div>
-          <div class="projects-list">
+  <footer>
+    © 2025 Rudra Tripathi | Hosted on GitHub Pages
+  </footer>
 
-            <div class="project">
-              <div class="meta">
-                <div style="font-weight:700">Snake-Water-Gun Game</div>
-                <div class="project-desc">A basic Snake-Water-Gun game implemented in Python that uses simple numeric choices.</div>
-                <div class="proj-links"><a href="https://github.com/Rudra3773/Snake_Water_Gun_Game" target="_blank">GitHub</a></div>
-              </div>
-            </div>
-
-            <div class="project">
-              <div class="meta">
-                <div style="font-weight:700">Weather Forecast Program</div>
-                <div class="project-desc">Real-time weather information system providing wind speed, humidity, visibility and rain prediction for any city.</div>
-                <div class="proj-links"><a href="https://github.com/Rudra3773/Weather_information" target="_blank">GitHub</a></div>
-              </div>
-            </div>
-
-            <div class="project">
-              <div class="meta">
-                <div style="font-weight:700">Personal Virtual Assistant — NEURA</div>
-                <div class="project-desc">Voice-driven assistant that opens web apps (WhatsApp, Facebook, LinkedIn, YouTube, Google) and fetches news using voice commands.</div>
-                <div class="proj-links"><a href="https://github.com/Rudra3773/-Personal-Virtual-Assistant-NEURA-" target="_blank">GitHub</a></div>
-              </div>
-            </div>
-
-            <div class="project">
-              <div class="meta">
-                <div style="font-weight:700">Traffic Management System</div>
-                <div class="project-desc">YOLOv8-based object detection for vehicles with a Streamlit dashboard and downloadable records.</div>
-                <div class="proj-links"><a href="https://github.com/Rudra3773/Traffic_management_system-" target="_blank">GitHub</a></div>
-              </div>
-            </div>
-
-            <div class="project">
-              <div class="meta">
-                <div style="font-weight:700">Drone Surveillance System</div>
-                <div class="project-desc">Drone-based multi-object detection using YOLOv8 and Deep SORT for tracking; Streamlit dashboard for analytics.</div>
-                <div class="proj-links"><a href="https://github.com/Rudra3773/drone_surveillance" target="_blank">GitHub</a></div>
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-        <section class="card" style="margin-top:16px">
-          <div class="section-title">Internships / Training</div>
-          <div class="intern-list">
-            <div>
-              <div style="font-weight:700">NIELIT — Summer Training & Internship</div>
-              <div class="project-desc">Role: Student Trainee — Course: AI/ML using Python (45 days)</div>
-            </div>
-          </div>
-        </section>
-
-        <section class="card" style="margin-top:16px">
-          <div class="section-title">Certifications</div>
-          <div class="cert-list">
-            <div>NIELIT — 45 days summer training (AI/ML using Python)</div>
-          </div>
-        </section>
-
-      </div>
-
-      <aside class="right-col">
-        <div class="card">
-          <div class="info-row">
-            <div>
-              <div style="font-weight:700">Contact</div>
-              <div class="project-desc">Rudratripathi3773@gmail.com</div>
-            </div>
-          </div>
-
-          <div style="margin-top:8px">
-            <div style="font-weight:700;margin-bottom:8px">Links</div>
-            <div style="display:flex;flex-direction:column;gap:8px">
-              <a class="proj-links" href="https://github.com/Rudra3773" target="_blank">GitHub /Rudra3773</a>
-              <a class="proj-links" href="https://www.linkedin.com/in/rudra-tripathi-71a367306" target="_blank">LinkedIn /rudra-tripathi</a>
-            </div>
-          </div>
-
-          <div style="margin-top:16px">
-            <div style="font-weight:700;margin-bottom:8px">Quick CV</div>
-            <div class="download-note">Click "Download Resume" at the top to download your resume. Add <code>resume.pdf</code> to your repo for this to work.</div>
-          </div>
-
-          <div style="margin-top:16px">
-            <div style="font-weight:700;margin-bottom:8px">Contact Form</div>
-            <!-- Formspree usage: replace FORM_ID with your Formspree form id or configure a serverless handler -->
-            <form id="contactForm" action="https://formspree.io/f/your_FORM_ID" method="POST">
-              <div style="display:flex;flex-direction:column;gap:8px">
-                <input name="name" placeholder="Your name" required style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" />
-                <input name="email" placeholder="Email" type="email" required style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" />
-                <textarea name="message" placeholder="Message" required style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></textarea>
-                <button class="btn" type="submit">Send</button>
-              </div>
-            </form>
-            <div style="font-size:12px;color:var(--muted);margin-top:8px">Or email me at <a href="mailto:Rudratripathi3773@gmail.com">Rudratripathi3773@gmail.com</a></div>
-          </div>
-        </div>
-
-        <div style="height:18px"></div>
-
-        <div class="card">
-          <div style="font-weight:700">Notes</div>
-          <div style="color:var(--muted);margin-top:8px">Replace <code>resume.pdf</code> in the repo root so the Download button works. Replace the Formspree ID in the contact form (or remove the form and use mailto).</div>
-        </div>
-      </aside>
-    </main>
-
-    <footer>Made with ♥ — Rudra Tripathi • Hosted on GitHub Pages</footer>
-  </div>
-
-  <script>
-    // Theme toggle (small: change text only, keep dark styling by default)
-    const btn = document.getElementById('toggleTheme');
-    btn.addEventListener('click', ()=>{
-      if(btn.textContent.trim()==='Light'){
-        btn.textContent='Dark';
-        document.documentElement.style.setProperty('--bg','#f8fafc');
-        document.documentElement.style.setProperty('--card','#ffffff');
-        document.documentElement.style.setProperty('--muted','#334155');
-        document.documentElement.style.setProperty('--accent','#0ea5a4');
-        document.body.style.color='#0b1220';
-      } else {
-        btn.textContent='Light';
-        document.documentElement.style.setProperty('--bg','#0f1724');
-        document.documentElement.style.setProperty('--card','#0b1220');
-        document.documentElement.style.setProperty('--muted','#94a3b8');
-        document.documentElement.style.setProperty('--accent','#4f46e5');
-        document.body.style.color='';
-      }
-    });
-
-    // Simple form handler fallback
-    document.getElementById('contactForm').addEventListener('submit', function(e){
-      const action = this.getAttribute('action');
-      if(action.includes('your_FORM_ID')){
-        e.preventDefault();
-        alert('Please replace your_FORM_ID in the form action with your Formspree form ID, or remove form to use mailto.');
-      }
-    });
-  </script>
 </body>
 </html>
