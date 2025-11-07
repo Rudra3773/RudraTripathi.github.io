@@ -56,20 +56,23 @@
   animation: pulseGlow 4s infinite;
 }
 
+.profile-pic:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(79, 70, 229, 0.8);
+}
+
 header {
   display: flex;
   align-items: center;
   gap: 20px;
 }
+
 @keyframes pulseGlow {
   0% { box-shadow: 0 0 10px rgba(79,70,229,0.6); }
   50% { box-shadow: 0 0 25px rgba(79,70,229,1); }
   100% { box-shadow: 0 0 10px rgba(79,70,229,0.6); }
 }
 
-.profile-pic {
-  animation: pulseGlow 4s infinite;
-}
 
 
 </head>
