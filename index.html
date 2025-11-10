@@ -14,6 +14,7 @@
       --muted: #94a3b8;
       --text: #e2e8f0;
       --glow: rgba(99, 102, 241, 0.6);
+      --success: #22c55e;
     }
 
     * {
@@ -160,20 +161,41 @@
       font-size: 13px;
     }
 
-    /* CONTACT FORM */
+    /* CONTACT FORM (Improved Design) */
     .contact-form {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
+      margin-top: 15px;
+      background: #111827;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(99, 102, 241, 0.1);
     }
 
-    .contact-form input, .contact-form textarea {
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
       background: #0f172a;
       color: var(--text);
-      border: 1px solid var(--muted);
-      border-radius: 6px;
-      padding: 10px;
-      font-size: 14px;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 15px;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 8px var(--glow);
+      outline: none;
+      animation: inputFocus 0.2s ease-in forwards;
+    }
+
+    @keyframes inputFocus {
+      from { box-shadow: 0 0 0 rgba(99, 102, 241, 0); }
+      to { box-shadow: 0 0 8px var(--glow); }
     }
 
     .contact-form button {
@@ -181,14 +203,34 @@
       background: var(--accent);
       color: white;
       border: none;
-      padding: 10px 18px;
-      border-radius: 6px;
+      padding: 10px 22px;
+      border-radius: 8px;
       cursor: pointer;
       font-weight: 500;
+      transition: all 0.3s ease;
     }
 
     .contact-form button:hover {
       background: #818cf8;
+      transform: translateY(-2px);
+    }
+
+    /* Success Message Popup */
+    .success-message {
+      display: none;
+      margin-top: 10px;
+      background: rgba(34, 197, 94, 0.15);
+      color: var(--success);
+      border: 1px solid var(--success);
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-size: 14px;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 768px) {
@@ -202,7 +244,6 @@
         justify-content: center;
       }
     }
-
   </style>
 </head>
 <body>
@@ -243,15 +284,15 @@
     </section>
 
     <section class="section" id="projects">
-  <h2>Projects</h2>
-  <ul>
-    <li>🎮 <b>Snake-Water-Gun Game:</b> Simple Python-based logic game using numeric rules | <a href="#">GitHub</a></li>
-    <li>🌦️ <b>Weather Forecast Program:</b> Real-time global weather information app using APIs | <a href="#">GitHub</a></li>
-    <li>🧠 <b>NEURA - Virtual Assistant:</b> Voice-controlled AI assistant for web automation | <a href="#">GitHub</a></li>
-    <li>🚗 <b>Traffic Management System:</b> Object detection for vehicles using YOLOv8 + Streamlit dashboard | <a href="#">GitHub</a></li>
-    <li>🚁 <b>Drone Surveillance System:</b> Real-time drone-based tracking using YOLOv8 + DeepSORT | <a href="#">GitHub</a></li>
-  </ul>
-</section>
+      <h2>Projects</h2>
+      <ul>
+        <li>🎮 <b>Snake-Water-Gun Game:</b> Simple Python-based logic game using numeric rules | <a href="#">GitHub</a></li>
+        <li>🌦️ <b>Weather Forecast Program:</b> Real-time global weather information app using APIs | <a href="#">GitHub</a></li>
+        <li>🧠 <b>NEURA - Virtual Assistant:</b> Voice-controlled AI assistant for web automation | <a href="#">GitHub</a></li>
+        <li>🚗 <b>Traffic Management System:</b> Object detection for vehicles using YOLOv8 + Streamlit dashboard | <a href="#">GitHub</a></li>
+        <li>🚁 <b>Drone Surveillance System:</b> Real-time drone-based tracking using YOLOv8 + DeepSORT | <a href="#">GitHub</a></li>
+      </ul>
+    </section>
     
     <section class="section">
       <h2>Internship</h2>
@@ -259,6 +300,7 @@
       Gained hands-on experience in model training, Python-based ML, and data visualization.</p>
     </section>
 
+    <!-- Updated Contact Section -->
     <section class="section">
       <h2>Contact</h2>
       <p><b>Email:</b> rudratripathi3773@gmail.com</p>
@@ -266,41 +308,44 @@
       <p><b>LinkedIn:</b> <a href="https://linkedin.com/in/rudra-tripathi" target="_blank">rudra-tripathi</a></p>
       <p><b>Instagram:</b> <a href="https://instagram.com/in/rudra.10.01" target="_blank">rudra.10.01</a></p>
       <p><b>Twitter:</b> <a href="https://twitter.com/in/rudratripathi37" target="_blank">rudratripathi37</a></p>
-     
 
+      <form id="contactForm" class="contact-form" action="https://formspree.io/f/mvgdpeql" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
 
-<form id="contactForm" action="https://formspree.io/f/mvgdpeql" method="POST">
-  <input type="text" name="name" placeholder="Your Name" required />
-  <input type="email" name="email" placeholder="Your Email" required />
-  <textarea name="message" rows="4" placeholder="Message" required></textarea>
-  <button type="submit">Send</button>
-</form>
-
-<script>
-  const form = document.getElementById('contactForm');
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const response = await fetch(form.action, {
-      method: form.method,
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    });
-    if (response.ok) {
-      alert("✅ Message sent successfully!");
-      form.reset();
-    } else {
-      alert("⚠️ There was an error sending your message. Please try again later.");
-    }
-  });
-</script>
-
-
+      <div id="successMessage" class="success-message">
+        ✅ Your message has been sent successfully!
+      </div>
     </section>
   </main>
 
   <footer>
     © 2025 Rudra Tripathi | Hosted on GitHub Pages
   </footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        successMessage.style.display = "block";
+        form.reset();
+        setTimeout(() => { successMessage.style.display = "none"; }, 4000);
+      } else {
+        alert("⚠️ There was an error sending your message. Please try again later.");
+      }
+    });
+  </script>
 
 </body>
 </html>
